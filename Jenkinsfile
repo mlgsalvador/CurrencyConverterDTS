@@ -8,11 +8,6 @@ pipeline {
             steps {
                 cleanWs()
 
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-
                 checkout changelog: false,
                     poll: false,
                     scm: [$class: 'GitSCM',
